@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Proiect__Savina_Ioana.Models.RestaurantViewModels.OrderGroup>
+@{
+    ViewData["Dish"] = "Ordered Foods Statistics";
+}
+<h2>Ordered Foods Statistics</h2>
+<table>
+    <tr>
+        <th>
+            Order Date
+        </th>
+        <th>
+            Ordered Foods
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.OrderDate)
+    </td>
+    <td>
+        @item.FoodCount
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Food)
+    </td>
+</tr>
+    }
+</table>
